@@ -1,0 +1,29 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>Movies</mat-card-title>
+    <mat-card-subtitle>Version {{1}}</mat-card-subtitle>
+
+
+  </mat-card-header>
+  <mat-card-content>
+    <mat-list>
+      <mat-list-item *ngFor="let property of entity.properties;
+                             let idx = index">
+        <div>
+          <app-svc-property [property]="property"
+                            [formGroup]="propertyArray.controls[idx]">
+          </app-svc-property>
+        </div>
+      </mat-list-item>
+    </mat-list>
+    <button mat-mini-fab
+            (click)="onAdd()">
+      <mat-icon>add</mat-icon>
+    </button>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button
+            (click)="onSave()">Save
+    </button>
+  </mat-card-actions>
+</mat-card>

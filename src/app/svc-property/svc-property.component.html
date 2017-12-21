@@ -1,0 +1,19 @@
+<form [formGroup]="formGroup">
+  <mat-form-field>
+    <input matInput
+           [(ngModel)]="property.name"
+           placeholder="Property Name"
+           formControlName="name">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-select [(value)]="property.dataType"
+                placeholder="Data Type"
+                formControlName="dataType">
+      <mat-option
+        *ngFor="let propType of propTypes"
+        [value]="propType.value">
+        {{propType.viewValue}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</form>
