@@ -19,6 +19,10 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {AppComponent} from './app.component';
 import {SvcEntityComponent} from './svc-entity/svc-entity.component';
 import {SvcPropertyComponent} from './svc-property/svc-property.component';
+import { AppRoutingModule } from './/app-routing.module';
+import { SvcWorkbenchComponent } from './svc-workbench/svc-workbench.component';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
 
 
 @NgModule({
@@ -26,7 +30,9 @@ import {SvcPropertyComponent} from './svc-property/svc-property.component';
     AppComponent,
     SvcEntityComponent,
     SvcPropertyComponent,
-
+    SvcWorkbenchComponent,
+    LoginComponent,
+    SignupComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,7 +48,8 @@ import {SvcPropertyComponent} from './svc-property/svc-property.component';
     MatIconModule,
     MatSidenavModule,
     HttpClientModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {SvcEntity, SvcProperty, Type} from '../model/Svc';
+
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {MatSnackBar} from '@angular/material';
 
@@ -11,6 +12,7 @@ import {FormArray, FormBuilder, FormGroup, Validators} from "@angular/forms";
   styleUrls: ['./svc-entity.component.css']
 })
 export class SvcEntityComponent implements OnInit {
+
 
   entity: SvcEntity = new SvcEntity();
   entityGroup: FormGroup;

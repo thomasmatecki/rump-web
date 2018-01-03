@@ -1,0 +1,50 @@
+<div class="container">
+  <mat-card>
+    <form class="signup-container"
+          [formGroup]="signupGroup"
+          (ngSubmit)="onSubmit()">
+
+      <mat-form-field>
+        <input matInput
+               placeholder="Enter your First Name"
+               formControlName="firstName"
+               [(ngModel)]="userInfo.firstName"
+               required>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput
+               placeholder="Enter your Last Name"
+               formControlName="lastName"
+               [(ngModel)]="userInfo.lastName"
+               required>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput
+               placeholder="Enter your email"
+               formControlName="email"
+               [(ngModel)]="userInfo.email"
+               required>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput
+               placeholder="Enter your password"
+               formControlName="password"
+               [(ngModel)]="userInfo.password"
+               type='password'>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput
+               placeholder="Verify your password"
+               formControlName="passwordVerify"
+               [(ngModel)]="userInfo.passwordVerify"
+               type='password'>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" type="submit">SIGN UP!</button>
+    </form>
+  </mat-card>
+</div>

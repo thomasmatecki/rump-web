@@ -1,24 +1,13 @@
 /**
  *
- *
- *
- *
- *
- *
- *
- *
- *
- *
  */
 export enum Type {
   String = 'string',
   Integer = 'integer',
-  Float = 'Float'
+  Float = 'float'
 }
 
-
 export class SvcProperty {
-
   name: string;
   dataType: Type
 }
