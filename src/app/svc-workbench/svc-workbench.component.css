@@ -1,3 +1,21 @@
 .content {
   padding: 10px;
 }
+
+.container {
+  height: 80vh;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.nav-list {
+  width: 160px;
+}
+
+.toolbar-spacer{
+  flex: 1 1 auto;
+}
