@@ -36,17 +36,6 @@ export class SvcEntityComponent implements OnInit {
     }
   }
 
-  private appendProperty() {
-    this.propertyArray.push(
-      this.formBuilder.group({
-        name: ['', Validators.required],
-        dataType: ['', Validators.required]
-      })
-    );
-
-    this.entity.properties.push(new SvcProperty())
-  }
-
   onAdd() {
     this.appendProperty()
   }
@@ -61,5 +50,18 @@ export class SvcEntityComponent implements OnInit {
         } else {
         }
         console.log("Save Pressed");*/
+  }
+
+
+
+  private appendProperty() {
+    this.propertyArray.push(
+      this.formBuilder.group({
+        name: ['', Validators.required],
+        dataType: ['', Validators.required]
+      })
+    );
+
+    this.entity.properties.push(new SvcProperty())
   }
 }

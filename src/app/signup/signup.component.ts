@@ -36,6 +36,7 @@ export class SignupComponent implements OnInit {
       email: ['', Validators.required],
       password: ['', Validators.required],
       passwordVerify: ['', Validators.required],
+      username: ['', Validators.required]
     });
   }
 
@@ -52,7 +53,7 @@ export class SignupComponent implements OnInit {
     };
 
     this.http.post<UserSignup>('/auth/signup', userSignup).subscribe(data => {
-      console.log(data)
+
     });
 
     this.router.navigateByUrl('', {skipLocationChange: false});

@@ -1,24 +1,37 @@
 <div class="container">
-  <mat-card>
-    <form class="login-container"
-          [formGroup]="loginGroup"
-          (ngSubmit)="onSubmit()">
-      <mat-form-field>
-        <input matInput
-               placeholder="Enter your email"
-               formControlName="email"
-               [(ngModel)]="credentials.identifier"
-               required>
-      </mat-form-field>
+  <div>
+    <div class="logo">
+      <img mat-card-image src="assets/app/assets/img/logo_extra_small_invert.png">
+    </div>
+    <div>
+      <mat-card>
+        <mat-card-header>
+        </mat-card-header>
+        <form class="login-container"
+              [formGroup]="loginGroup"
+              (ngSubmit)="onSubmit()">
+          <mat-form-field>
+            <input matInput
+                   placeholder="Email or Username"
+                   formControlName="email"
+                   [(ngModel)]="credentials.identifier"
+                   required>
+          </mat-form-field>
 
-      <mat-form-field>
-        <input matInput
-               placeholder="Enter your password"
-               formControlName="password"
-               [(ngModel)]="credentials.password"
-               type='password'>
-      </mat-form-field>
-      <button mat-raised-button color="primary" type="submit">LOG IN!</button>
-    </form>
-  </mat-card>
+          <mat-form-field>
+            <input matInput
+                   placeholder="Password"
+                   formControlName="password"
+                   [(ngModel)]="credentials.password"
+                   type='password'
+                   required>
+          </mat-form-field>
+          <button mat-raised-button color="primary" type="submit">LOG IN!</button>
+        </form>
+        <div class="signup-container">Don't Have an Account?
+          <button mat-raised-button color="primary" (click)="onDoSignUp()">SIGN UP NOW!</button>
+        </div>
+      </mat-card>
+    </div>
+  </div>
 </div>

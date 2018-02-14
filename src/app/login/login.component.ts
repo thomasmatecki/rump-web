@@ -1,10 +1,11 @@
 import {Component, OnInit} from '@angular/core';
-import {FormGroup, Validators, FormBuilder} from "@angular/forms";
-import {SvcEntity} from "../model/Svc";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Credentials} from "../model/User";
 import {Router} from '@angular/router';
-import {HttpClient} from '@angular/common/http';
 import 'rxjs/add/operator/do';
+import {MatSnackBar} from '@angular/material';
+import {AuthenticationService} from "../auth/authentication.service";
+import {Option} from "../util/Monads";
 
 @Component({
   selector: 'app-login',
@@ -21,7 +22,7 @@ export class LoginComponent implements OnInit {
   };
 
   constructor(private formBuilder: FormBuilder,
-              private http: HttpClient,
+              private authService: AuthenticationService,
               private router: Router) {
   }
 
@@ -32,12 +33,24 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  onSubmit() {
-    this.http.post<Credentials>('/auth/login', this.credentials).subscribe(data => {
-      console.log(data)
-    });
+  /**
+   *
+   */
+  onSubmit(): void {
+    this.authService.login(this.credentials, Option.fold(
+      () => {
+        this.router.navigate([""]);
+      },
+      (error) => {
 
-    this.router.navigateByUrl('', {skipLocationChange: false});
+      }
+    ));
+  }
 
+  /**
+   *
+   */
+  onDoSignUp() {
+    //this.router.navigate(["signup"]);
   }
 }
